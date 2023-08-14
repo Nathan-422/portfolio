@@ -1,14 +1,12 @@
-import * as React from 'react';
 
 export interface INavbarProps {
 }
 
-export default class Navbar extends React.Component<INavbarProps> {
-  public render() {
+export default function Navbar () { 
     return (
     <nav>
-        
+        <a href='none'>Link</a>
+        <a href='another'>Another</a>
     </nav>
-    );
-  }
+	) 
 }
