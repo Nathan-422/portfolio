@@ -3,9 +3,9 @@ export interface INavbarProps {
 
 export default function Navbar () { 
     return (
-    <nav className="justify-end">
-        <a href='about'>About</a>
-        <a href='contact'>Contact</a>
+    <nav className="flex flex-row justify-end space-x-4 px-6">
+        <a className="" href='about'>About</a>
+        <a className="" href='contact'>Contact</a>
     </nav>
 	)
 }
