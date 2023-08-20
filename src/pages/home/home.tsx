@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Button from "../../components/button/Button";
 
 const items = [
     {body: 'First item', id: 1},
@@ -18,26 +19,19 @@ const listItems = items.map(item =>
 )
 
 
-function MyButton() {
+export default function HomePage() {
+    const [clicked, setClicked] = useState(false);
     
     function handleClick() {
         setClicked(true);
         alert('Clicked a button!')
     }
-    
-    const [clicked, setClicked] = useState(false);
 
-    return <>
-    <button className="mx-4 bg-cyan-600 border-2 border-cyan-900 text-white p-2 rounded-md" disabled={clicked} onClick={handleClick}>Click me</button>
-    </>
-}
-
-export default function HomePage() {
     return <>
         <div>
             <h1>Home page content</h1>
             <ul className="mx-6">{listItems}</ul>
-            <MyButton />
+            <Button clicked={clicked} handleClick={handleClick} />
             <h1>End home page content</h1>
         </div>
     </>
