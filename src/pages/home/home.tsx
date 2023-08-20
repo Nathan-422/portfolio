@@ -11,7 +11,7 @@ const listItems = items.map(item =>
     <li 
     key={item.id}
     style={{
-        color: item.id == 2 ? 'magenta' : 'black'
+        color: item.id % 2 ? 'magenta' : 'black'
     }}
     >
         {item.body}
@@ -30,6 +30,7 @@ export default function HomePage() {
     return <>
         <div>
             <h1>Home page content</h1>
+            {clicked && <div>Hello</div>}
             <ul className="mx-6">{listItems}</ul>
             <Button clicked={clicked} handleClick={handleClick} />
             <h1>End home page content</h1>
