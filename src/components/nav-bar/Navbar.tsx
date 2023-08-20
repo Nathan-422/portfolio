@@ -1,7 +1,7 @@
 export interface INavbarProps {
 }
 
-export default function Navbar () { 
+export function Navbar () { 
     const routes = [
         { id: 1, text: 'About', route: 'about', },
         { id: 2, text: 'Contact', route: 'contact', },

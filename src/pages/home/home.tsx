@@ -19,7 +19,7 @@ const listItems = items.map(item =>
 )
 
 
-export default function HomePage() {
+export function HomePage() {
     const [clicked, setClicked] = useState(false);
     
     function handleClick() {
