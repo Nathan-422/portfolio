@@ -1,8 +1,8 @@
-export interface ICardCompProps {
+export interface ICardProps {
     contents: string;
 }
 
-export function CardComp (props: ICardCompProps) {
+export function Card (props: ICardProps) {
   return (
     <>
     <div className="bg-white text-black mx-auto max-w-md p-4 rounded-md shadow-sm hover:shadow-md transition duration-500 ease-in-out">     {props.contents}
