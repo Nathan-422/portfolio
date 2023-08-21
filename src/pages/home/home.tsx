@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Button from "../../components/button/Button";
+import { GuessingGame } from "../../components/game/Game"
 
 const items = [
     {body: 'First item', id: 1},
@@ -33,6 +34,7 @@ export function HomePage() {
             {clicked && <div>Hello</div>}
             <ul className="mx-6">{listItems}</ul>
             <Button clicked={clicked} handleClick={handleClick} />
+            <GuessingGame></GuessingGame>
             <h1>End home page content</h1>
         </div>
     </>
