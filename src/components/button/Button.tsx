@@ -8,7 +8,7 @@ const activeBtn = "bg-cyan-600 border-cyan-900 text-white";
 const disabledBtn = "bg-gray-200 border-gray-300 text-gray-400"
 
 
-export default function Button (props: IButtonProps) {
+export function Button (props: IButtonProps) {
 
   // I haven't finished this. I need to build an optional basically.
   let buttonText: string = "I'm a string!";
