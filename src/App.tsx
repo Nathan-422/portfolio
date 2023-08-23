@@ -2,30 +2,7 @@ import { Navbar } from "./components/nav-bar/Navbar.tsx";
 import { HomePage } from "./pages/home/home.tsx";
 import { Card } from "./components/card/Card.tsx";
 
-
-  // variables are assigned
-  const text = "I'm the default card text"
-  const showPrimary = true
-  const cardStyles = "bg-white text-black mx-auto max-w-md p-4 rounded-md shadow-sm hover:shadow-md transition duration-500 ease-in-out"
-
-  // This if else can be done with a ternary {condition ? true : false} or a logical && syntax of {condition && trueContent}
-  if (showPrimary) {
-    <>
-    <div className={cardStyles}>
-      {/* TS can be accessed from currly braces */}
-      {text} 
-    </div>
-    </>
-  } else {
-    <>
-    <div className={cardStyles}>
-      This text shouldn't be displayed!
-    </div>
-    </>
-  }
-
-
-function App() {
+export default function App() {
   return (
     <>
     <div className='bg-slate-100 text-slate-800 w-screen h-auto flex flex-col align'>
@@ -40,5 +17,3 @@ function App() {
   </>
   )
 }
-
-export default App
