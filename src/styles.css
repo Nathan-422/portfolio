@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.st0 {
+    fill: #6cb52d;
+}
+
+.st1, .st3 {
+    fill: #fff;
+}
