@@ -1,5 +1,6 @@
 import { Navbar } from "./components/nav-bar/Navbar.tsx";
 import { Card } from "./components/card/Card.tsx";
+import About from "./pages/about/about.tsx";
 
 const contents = [
 	{content: "I'm Nathan, a video editor transitioning to web development. I've worked for about 8 years in media production, but my days of chasing freelance work have run their course."},
@@ -12,6 +13,7 @@ export default function App() {
     <>
     <div className='bg-slate-100 text-slate-800 w-screen h-full min-h-screen flex flex-col align'>
       <Navbar></Navbar>
+      <About/>
       <div className="flex flex-col justify-center space-y-6">
         {contents.map((item) => {
           return (
@@ -22,8 +24,8 @@ export default function App() {
             </Card>	
           )
         })}
+      </div>
     </div>
-  </div>
   </>
   )
 }
