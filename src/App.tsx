@@ -11,7 +11,7 @@ const contents = [
 export default function App() {
   return (
     <>
-    <div className='bg-slate-100 text-slate-800 w-screen h-full min-h-screen flex flex-col align'>
+    <div className='bg-slate-100 text-slate-800'>
       <Navbar></Navbar>
       <About/>
       <div className="flex flex-col justify-center space-y-6">
@@ -26,6 +26,6 @@ export default function App() {
         })}
       </div>
     </div>
-  </>
+  	</>
   )
 }
