@@ -11,8 +11,8 @@ const contents = [
 export default function App() {
   return (
     <>
-    <div className='bg-slate-100 text-slate-800'>
-      <Navbar></Navbar>
+    <Navbar></Navbar>
+    <div className='pt-6'>
       <About/>
       <div className="flex flex-col justify-center space-y-6">
         {contents.map((item) => {

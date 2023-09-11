@@ -14,8 +14,12 @@ export function Navbar () {
     )
 
     return (
-    <nav className="bg-slate-600 text-white flex flex-row justify-end space-x-4 px-6 py-3 mb-6">
-        {links}
-    </nav>
+    <div className="bg-slate-600">
+        <div className="max-w-5xl mx-auto">
+            <nav className=" text-white flex flex-row justify-end content-center space-x-4 px-6 py-3">
+                {links}
+            </nav>
+        </div>
+    </div>
 	)
 }

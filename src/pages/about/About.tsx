@@ -5,8 +5,8 @@ export default function About (props: IAboutProps) {
     
   return (
     <>
-    <section className="flex flex-col justify-center space-y-6 mx-6 lg:mx-6 xl:mx-72">
-      <h1 className="text-3xl">Professionally</h1>
+    <section className="flex flex-col justify-center space-y-6 mx-auto max-w-5xl">
+      <h1 className="text-4xl">Professionally</h1>
       <p>A quick promise. I'll be honest and frank. I won't waste your time with embellishments. There's a lot I still have to learn about software development, but I do have ten years of experience in project-based video-production and a perpetual learner's mindset.</p>
       <h2 className="text-3xl lg:text-4xl">Focus</h2>
       <p>I'm a full-stack web developer based in St. Louis, MO.</p>
@@ -14,7 +14,7 @@ export default function About (props: IAboutProps) {
       <p>My current focus is learning React development, but my next priorities are cloud deployment in AWS, CI/CD pipelines, and database skill refinement.</p>
       <p>My professional aspirations are to move into Java API development.</p>
       <h2 className="text-2xl">Backend</h2>
-      <div className="flex flex-row justify-around w-100 sm:h-12 md:h-16 lg:h-20 xl:h-36 max-h-24">
+      <div className="flex flex-row justify-around w-100 h-10 sm:h-12 md:h-16 lg:h-20 xl:h-36 max-h-24">
         <figure className="aspect-square max-h-60 ">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
         </figure>
