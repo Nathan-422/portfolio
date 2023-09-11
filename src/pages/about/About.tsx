@@ -13,12 +13,12 @@ export default function About (props: IAboutProps) {
       <p>My tech career started in 2022 with Launchcode's web-development bootcamp. The program taught a mix of development skills: single page applications, RESTful APIs, Relational databases, unit testing, core language skills, and most importantly collaborative development in an agile environment.</p>
       <p>My current focus is learning React development, but my next priorities are cloud deployment in AWS, CI/CD pipelines, and database skill refinement.</p>
       <p>My professional aspirations are to move into Java API development.</p>
-      <h2>Backend</h2>
-      <div className="flex flex-row h-min md:h- w-4/5 justify-evenly">
-        <figure className="w-1/2">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" alt="Logo of the Java programming launguage"/>
+      <h2 className="text-2xl">Backend</h2>
+      <div className="flex flex-row justify-around w-100 sm:h-12 md:h-16 lg:h-20 xl:h-36 max-h-24">
+        <figure className="aspect-square max-h-60 ">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
         </figure>
-        <figure className="w-1/2">
+        <figure className="aspect-square max-h-60 ">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Logo of the Spring framework"/>
         </figure>
       </div>

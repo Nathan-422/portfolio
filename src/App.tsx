@@ -1,6 +1,6 @@
 import { Navbar } from "./components/nav-bar/Navbar.tsx";
 import { Card } from "./components/card/Card.tsx";
-import About from "./pages/about/about.tsx";
+import About from "./pages/about/About.tsx";
 
 const contents = [
 	{content: "I'm Nathan, a video editor transitioning to web development. I've worked for about 8 years in media production, but my days of chasing freelance work have run their course."},
