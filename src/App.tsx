@@ -12,9 +12,9 @@ export default function App() {
   return (
     <>
     <Navbar></Navbar>
-    <div className='pt-6'>
+    <div className='pt-6 px-1'>
       <About/>
-      <div className="flex flex-col justify-center space-y-6">
+      {/* <div className="flex flex-col justify-center space-y-6">
         {contents.map((item) => {
           return (
             <Card 
@@ -24,7 +24,7 @@ export default function App() {
             </Card>	
           )
         })}
-      </div>
+      </div> */}
     </div>
   	</>
   )
