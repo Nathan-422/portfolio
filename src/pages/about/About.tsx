@@ -20,9 +20,13 @@ export default function About (props: IAboutProps) {
        
       <h2 className="text-2xl">Background</h2>
       <h3 className="text-xl">Education</h3>
+      <p>Lauchcode</p>
+      <p>Principia College</p>
       <h3 className="text-xl">Notable projects</h3>
       <h4 className="text-l">Aspen Global Change Institute: Archive Editing</h4>
+      <p></p>
       <h4 className="text-l">Taste Buddies</h4>
+      
 
       {/* <div className="flex flex-row justify-around w-full">
         <figure className="min-w-[6rem]">
