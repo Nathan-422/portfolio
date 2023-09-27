@@ -19,7 +19,7 @@ const listItems = items.map((item) => (
   </li>
 ))
 
-export function HomePage() {
+export function Home() {
   const [clicked, setClicked] = useState(false)
 
   function handleClick() {
