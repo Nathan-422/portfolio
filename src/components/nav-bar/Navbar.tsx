@@ -1,17 +1,16 @@
-export interface INavbarProps {
-}
+export interface INavbarProps {}
 
-export function Navbar () { 
-    const routes = [
-        { id: 1, text: 'About', route: 'about', },
-        { id: 2, text: 'Contact', route: 'contact', },
-    ]
+export function Navbar() {
+  const routes = [
+    { id: 1, text: 'About', route: 'about' },
+    { id: 2, text: 'Contact', route: 'contact' },
+  ]
 
-    const links = routes.map( route => 
-        <a key={route.id} href={route.route}>
-            {route.text}
-        </a>
-    )
+  const links = routes.map((route) => (
+    <a key={route.id} href={route.route}>
+      {route.text}
+    </a>
+  ))
 
     return (
     <div className="bg-slate-600">
