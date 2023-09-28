@@ -1,26 +1,28 @@
 export interface IAboutProps {}
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function About(props: IAboutProps) {
   return (
     <>
       <section className="flex flex-col space-y-6 mx-auto p-2">
         <h1 className="text-4xl">Professionally</h1>
-        <p>Hello, I'm Nathan. </p>
+        <p>Hello, I&apos;m Nathan. </p>
         <p>
-          A quick preface: I won't waste your time with embellishments. I'm an
-          aspiring full-stack developer. I went through a bootcamp, so I have a
+          A quick preface: I won&apos;t waste your time with embellishments. I&apos;m
+          an aspiring full-stack developer. I went through a bootcamp, so I have a
           baseline for developing web application, but obviously I still have to
           learn about development. What I am is an avid learner, constantly absorbing
           new patterns and technologies. There is an experience gap to close before
-          I'm up to full speed, but I'm working on that every day.
+          I&apos;m up to full speed, but I&apos;m working on that every day.
         </p>
         <h2 className="text-3xl">Focus</h2>
-        <p>I'm a full-stack web developer based in St. Louis, MO.</p>
+        <p>I&apos;m a full-stack web developer based in St. Louis, MO.</p>
         <p>
-          My tech career started in 2022 with Launchcode's web-development bootcamp.
-          The program taught a mix of development skills: single page applications,
-          RESTful APIs, Relational databases, unit testing, core language skills, and
-          most importantly collaborative development in an agile environment.
+          My tech career started in 2022 with Launchcode&apos;s web-development
+          bootcamp. The program taught a mix of development skills: single page
+          applications, RESTful APIs, Relational databases, unit testing, core
+          language skills, and most importantly collaborative development in an agile
+          environment.
         </p>
         <p>
           My current focus is learning React development, but my next priorities are
@@ -29,12 +31,13 @@ export default function About(props: IAboutProps) {
         <h3 className="text-xl">Backend</h3>
         <p>
           Java was the language where I started. I first learned a bit in college,
-          then later fleshed out my fundamentals in University of Helsinki's open
-          online Java program. In 2022, I went through Launchcode's web development
-          course where I started using Java and Spring Boot to build RESTful APIs.
+          then later fleshed out my fundamentals in University of Helsinki&apos;s
+          open online Java program. In 2022, I went through Launchcode&apos;s web
+          development course where I started using Java and Spring Boot to build
+          RESTful APIs.
         </p>
         <p>
-          For part of Launchcode's capstone project, my team and I developed a
+          For part of Launchcode&apos;s capstone project, my team and I developed a
           persistent, monolithic, RESTful api utilizing an MVC pattern, built with
           Spring Boot. It was a useful project to combine the techniques and skills I
           learned in the class while finding and filling the gaps in my knowledge. To

@@ -1,23 +1,21 @@
 import { Navbar } from './components/nav-bar/Navbar.tsx'
-import { Card } from './components/card/Card.tsx'
 import About from './pages/about/About.tsx'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import { Home } from './pages/home/Home.tsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-const contents = [
-  {
-    content:
-      "I'm Nathan, a video editor transitioning to web development. I've worked for about 8 years in media production, but my days of chasing freelance work have run their course.",
-  },
-  {
-    content:
-      "I got into launchcode's (a non-profit I'm passionate about!) web dev bookcamp in the fall of 2022 and finished 6 months later with a basic knowledge of developing SPA webapps with Angular, and backend APIs with Springboot. After the bootcamp I built a web app called Taste Buddies with a team of six in an Agile style over two months.",
-  },
-  {
-    content:
-      'Taste Buddies is a whimsical web app built out of the prompt: "tinder but for restaurants". The app allows you and a group to pick a time and area and swipe through restaurants until you find a match.',
-  },
-]
+// const contents = [
+//   {
+//     content:
+//       "I'm Nathan, a video editor transitioning to web development. I've worked for about 8 years in media production, but my days of chasing freelance work have run their course.",
+//   },
+//   {
+//     content:
+//       "I got into launchcode's (a non-profit I'm passionate about!) web dev bookcamp in the fall of 2022 and finished 6 months later with a basic knowledge of developing SPA webapps with Angular, and backend APIs with Springboot. After the bootcamp I built a web app called Taste Buddies with a team of six in an Agile style over two months.",
+//   },
+//   {
+//     content:
+//       'Taste Buddies is a whimsical web app built out of the prompt: "tinder but for restaurants". The app allows you and a group to pick a time and area and swipe through restaurants until you find a match.',
+//   },
+// ]
 
 export default function App() {
   return (
@@ -46,19 +44,21 @@ export default function App() {
 }
 
 function LittleHome() {
+  const paragraphText = "Welcome to Nathan's router"
   return (
     <>
       <h1 className="text-6xl">Home</h1>
-      <p>Welcome to Nathan's router</p>
+      <p>{paragraphText}</p>
     </>
   )
 }
 
 function NoMatch() {
+  const paragraphText = "Sorry, the hampsters couldn't find that page"
   return (
     <>
       <h1 className="text-6xl text-red-700">404</h1>
-      <p>Sorry, the hampsters couldn't find that page</p>
+      <p>{paragraphText}</p>
     </>
   )
 }

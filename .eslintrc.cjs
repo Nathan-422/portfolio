@@ -9,6 +9,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
+    'plugin:react/jsx-runtime'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -21,6 +22,13 @@ module.exports = {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
-    ]
+    ],
+    'react/react-in-jsx-scope': "off",
   },
+  settings: {
+    react: {
+      fragment: "syntax",
+      version: "detect"
+    }
+  } 
 }
