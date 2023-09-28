@@ -1,5 +1,7 @@
 function test() {
 return (
-<div>This should be indented</div>
+	<>
+<div>This should be indented</div> 
+	</>
 )
 }
