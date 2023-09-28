@@ -1,11 +1,5 @@
-export interface IContactProps {
-    
-}
+export interface IContactProps {}
 
-export default function Contact (props: IContactProps) {
-  return (
-    <div>
-      
-    </div>
-  );
+export default function Contact(props: IContactProps) {
+  return <div></div>
 }
