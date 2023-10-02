@@ -1,38 +1,66 @@
+import ProfilePicture from '../../assets/nathan-and-ru.jpg'
+import LCLogo from '../../assets/launchcode_logo.svg'
+
 export interface IAboutProps {}
 
 export default function About(props: IAboutProps) {
+  const introContent = {
+    title: "Hello, I'm Nathan",
+    bodyText: [
+      "I'm a recent graduate from Lauchcode (a 501(c)3 bootcamp here in St Louis). I have a foundation to work on, but I'm certainly aware I have a lot to learn.",
+      'I do have a background in video production. I freelanced as a video editor and am used to managing projects. I like the creative work, but not the instability of freelancing hence the career change.',
+    ],
+  }
+  const stackContent = {
+    techStack: 'Stack',
+    bodyText: [
+      'I work in a Spring, Angular stack for now. I knew some Java fundementals before Launchcode, but developed those skills further in Launchcode.',
+    ],
+  }
+  const learningContent = {
+    currentFocus:
+      "I'm learning React at the moment, as well as AWS, CI/CD workflows, containerization, and expanding my grasp on design patterns.",
+  }
   return (
     <>
       <section className="flex flex-col space-y-6 mx-auto p-2">
-        <h1 className="text-4xl">Professionally</h1>
-        <p>Hello, I'm Nathan. </p>
-        <p>
-          A quick preface: I won't waste your time with embellishments. I'm an
-          aspiring full-stack developer. I went through a bootcamp, so I have a
-          baseline for developing web application, but obviously I still have to
-          learn about development. What I am is an avid learner, constantly absorbing
-          new patterns and technologies. There is an experience gap to close before
-          I'm up to full speed, but I'm working on that every day.
-        </p>
-        <h2 className="text-3xl">Focus</h2>
-        <p>I'm a full-stack web developer based in St. Louis, MO.</p>
-        <p>
-          My tech career started in 2022 with Launchcode's web-development bootcamp.
-          The program taught a mix of development skills: single page applications,
-          RESTful APIs, Relational databases, unit testing, core language skills, and
-          most importantly collaborative development in an agile environment.
-        </p>
-        <p>
-          My current focus is learning React development, but my next priorities are
-          cloud deployment in AWS, CI/CD pipelines, and database skill refinement.
-        </p>
-        <h3 className="text-xl">Backend</h3>
-        <p>
-          Java was the language where I started. I first learned a bit in college,
-          then later fleshed out my fundamentals in University of Helsinki's open
-          online Java program. In 2022, I went through Launchcode's web development
-          course where I started using Java and Spring Boot to build RESTful APIs.
-        </p>
+        <h1 className="text-5xl">{introContent.title}</h1>
+        <img
+          src={ProfilePicture}
+          alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
+          className="rounded-full shadow-lg border-8 border-white"
+        />
+        <div className="bg-cyan-50 p-3 mb-6 rounded-md shadow-md">
+          <p className="mb-2">{introContent.bodyText[0]}</p>
+          <img src={LCLogo} alt="Logo for launchcode" className="my-2" />
+          <p className="">{introContent.bodyText[1]}</p>
+          <p className="">{introContent.bodyText[2]}</p>
+        </div>
+        <h2 className="text-4xl">{stackContent.techStack}</h2>
+        <div
+          className="bg-cyan-50 p-3 mb-6 rounded-md shadow-md flex lg:block gap-2"
+          id="tech-stack-card"
+        >
+          <div className="flex flex-col lg:flex-row w-36 lg:w-48 lg:mx-auto gap-2">
+            <figure
+              className="min-w-full lg:w-1/2 bg-white rounded-full"
+              id="java-logo"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt="Java logo"
+              />
+            </figure>
+            <figure className="min-w-full lg:w-1/2" id="spring-logo">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                alt="Logo of the Spring framework"
+              />
+            </figure>
+          </div>
+          <p>{stackContent.bodyText[0]}</p>
+        </div>
+        <p>{learningContent.currentFocus}</p>
         <p>
           For part of Launchcode's capstone project, my team and I developed a
           persistent, monolithic, RESTful api utilizing an MVC pattern, built with
@@ -41,26 +69,8 @@ export default function About(props: IAboutProps) {
           be particular, the backend concepts I got to delve deeper into were
           authentication, authorization, and API design.
         </p>
-        <h3 className="text-xl">Frontend</h3>
-
-        <h2 className="text-2xl">Background</h2>
-        <h3 className="text-xl">Education</h3>
-        <p>Lauchcode</p>
-        <p>Principia College</p>
-        <h3 className="text-xl">Notable projects</h3>
-        <h4 className="text-l">Aspen Global Change Institute: Archive Editing</h4>
-        <p></p>
-        <h4 className="text-l">Taste Buddies</h4>
-
         {/* <div className="flex flex-row justify-around w-full">
-        <figure className="min-w-[6rem]">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
-        </figure>
-        <figure className="min-w-[6rem]">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Logo of the Spring framework"/>
-        </figure>
-      </div>
-      <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
+        <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
       </section>
     </>
   )
