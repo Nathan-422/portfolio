@@ -8,7 +8,7 @@
     "css": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css)\"",
+    "format": "prettier . --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css)\"",
     "preview": "vite preview",
     "prepare": "husky install"
   },
@@ -31,6 +31,7 @@
     "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "react-router-dom": "^6.16.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
