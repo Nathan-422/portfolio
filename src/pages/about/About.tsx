@@ -14,11 +14,12 @@ export default function About(props: IAboutProps) {
   const stackContent = {
     techStack: 'Stack',
     bodyText: [
-      'I work in a Spring, Angular stack for now. I had some Java and OOP fundementals before Launchcode which helped me get comfortable using Spring Boot for backend development in the class.',
+      'I work in a Spring, Angular stack at the moment. I had some Java and OOP fundementals before Launchcode which helped me get comfortable using Spring Boot for backend development in the class.',
       'My only experience with frontend development was a couple web-design classes in college that made heavy use of Dreamweaver. In Launchcode, we learned server rendered templating with Thymeleaf then transitioned to SPAs with Angular.',
     ],
   }
   const learningContent = {
+    header: 'Learning',
     currentFocus:
       "I'm learning React at the moment, as well as AWS, CI/CD workflows, containerization, and expanding my grasp on design patterns.",
   }
@@ -31,51 +32,78 @@ export default function About(props: IAboutProps) {
       link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
       altText: 'Spring framework logo',
     },
+    mySQL: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      altText: 'MySQL logo',
+    },
+    angular: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg',
+      altText: 'Angular framework logo',
+    },
+    react: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      altText: 'React library logo',
+    },
+    tailwind: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      altText: 'TailwindCSS logo',
+    },
   }
   return (
     <>
-      <section className="mx-auto mb-4">
-        <h1 className="text-5xl">{introContent.title}</h1>
-        <img
-          src={ProfilePicture}
-          alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
-          className="rounded-full shadow-lg border-8 border-white"
-        />
-        <div className="bg-cyan-100 p-3 mb-6 shadow-sm">
-          <p className="">{introContent.bodyText[0]}</p>
-          <img src={LCLogo} alt="Logo for launchcode" className="max-w-lg" />
-          <p className="">{introContent.bodyText[1]}</p>
+      <article className="[&>section]:mb-4 [&>section]:shadow-sm ">
+        <div className="mb-4 grid grid-cols-wrapper items-center  lg:grid-cols-splitwrapper">
+          <h1 className="col-start-2 text-5xl lg:col-start-2">
+            {introContent.title}
+          </h1>
+          <img
+            src={ProfilePicture}
+            alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
+            className="col-start-2 mx-auto max-w-sm rounded-full border-8 border-white shadow-lg lg:col-start-3"
+          />
         </div>
-        <h2 className="text-4xl">{stackContent.techStack}</h2>
-        <div
-          className="bg-amber-300 p-3 mb-6 shadow-sm flex flex-wrap gap-2"
-          id="tech-stack-card"
-        >
-          <div className="min-w-[4rem] flex flex-col lg:flex-row lg:min-w-min lg:mx-auto gap-2">
-            {Object.entries(devIconLinks).map(([key, value]) => {
+        <section className="relative grid grid-cols-wrapper">
+          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 grid bg-cyan-100 py-4">
+            <p className="">{introContent.bodyText[0]}</p>
+            <img src={LCLogo} alt="Logo for launchcode" className="max-w-lg" />
+            <p className="">{introContent.bodyText[1]}</p>
+          </div>
+        </section>
+        <h2 className="wrapper mb-4 mt-8 text-4xl">{stackContent.techStack}</h2>
+        <section className="relative grid grid-cols-wrapper">
+          <div
+            className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 gap-2 bg-amber-300 py-4 lg:flex lg:flex-wrap"
+            id="tech-stack-card"
+          >
+            <div className="float-right flex min-w-[4rem] flex-col gap-2 lg:min-w-full lg:flex-row">
+              {Object.entries(devIconLinks).map(([key, value]) => {
+                return (
+                  <figure
+                    className="h-full w-full rounded-lg border-8 border-white bg-white lg:rounded-2xl"
+                    id={key + '-logo'}
+                    key={key}
+                  >
+                    <img src={value.link} alt={value.altText} />
+                  </figure>
+                )
+              })}
+            </div>
+            {stackContent.bodyText.map((content, i) => {
               return (
-                <figure
-                  className="min-w-full lg:min-w-full bg-white rounded-2xl border-8 border-white"
-                  id={key + '-logo'}
-                  key={key}
-                >
-                  <img src={value.link} alt={value.altText} />
-                </figure>
+                <p key={'devStack-' + i} className="max-w-[90%] lg:max-w-none">
+                  {content}
+                </p>
               )
             })}
           </div>
-          {stackContent.bodyText.map((content, i) => {
-            return (
-              <p key={'devStack-' + i} className="max-w-[75%] lg:max-w-none">
-                {content}
-              </p>
-            )
-          })}
-        </div>
-        <div className="bg-pink-500">
-          <p>{learningContent.currentFocus}</p>
-        </div>
-        <p>
+        </section>
+        <h2 className="wrapper mb-4 mt-8 text-4xl">{learningContent.header}</h2>
+        <section className="relative grid grid-cols-wrapper">
+          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 bg-pink-500 py-4 text-white">
+            <p>{learningContent.currentFocus}</p>
+          </div>
+        </section>
+        <p className="col-start-2">
           For part of Launchcode's capstone project, my team and I developed a
           persistent, monolithic, RESTful api utilizing an MVC pattern, built with
           Spring Boot. It was a useful project to combine the techniques and skills I
@@ -84,8 +112,8 @@ export default function About(props: IAboutProps) {
           authentication, authorization, and API design.
         </p>
         {/* <div className="flex flex-row justify-around w-full">
-        <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
-      </section>
+          <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
+      </article>
     </>
   )
 }

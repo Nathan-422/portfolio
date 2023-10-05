@@ -17,7 +17,7 @@ export function Button(props: IButtonProps) {
     <>
       <button
         className={
-          'mx-4 p-2 border-2 rounded-md ' + (props.clicked ? disabledBtn : activeBtn)
+          'mx-4 rounded-md border-2 p-2 ' + (props.clicked ? disabledBtn : activeBtn)
         }
         disabled={props.clicked}
         onClick={props.handleClick}

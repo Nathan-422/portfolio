@@ -17,8 +17,8 @@ export function Navbar() {
 
   return (
     <div className="bg-green-700">
-      <div className="max-w-5xl mx-auto">
-        <nav className=" text-white flex flex-row justify-end content-center space-x-4 px-6 py-3">
+      <div className="mx-auto max-w-5xl">
+        <nav className=" flex flex-row content-center justify-end space-x-4 px-6 py-3 text-white">
           {links}
         </nav>
       </div>
