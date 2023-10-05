@@ -13,6 +13,12 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
+	settings: {
+		react: {
+			fragments: "syntax",
+			version: "detect",
+		},
+	},
   plugins: [
     'react', 
     'react-hooks', 
