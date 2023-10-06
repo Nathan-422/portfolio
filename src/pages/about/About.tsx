@@ -5,23 +5,27 @@ export interface IAboutProps {}
 
 export default function About(props: IAboutProps) {
   const introContent = {
-    title: "Hello, I'm Nathan",
+    title: ["Hello, ", "I'm Nathan",],
     bodyText: [
       "I'm a recent graduate from Lauchcode (a non-profit bootcamp here in St Louis). With that, I have a foundation in full-stack development, but I know I still have a lot to learn.",
-      'My background is in video production. I freelanced as a video editor and am used to managing projects. I like the creative work, but not the instability that came with freelancing.',
+      'My background is in video production. I freelanced as a video editor and am used to managing projects. It was fun work, but at this point I\'m looking for a career with more stability.',
+			'Why you should hire me, beyond the standard fast learner, passionate about tech, that you\'ll hear from everyone is that I work well on a team. I work hard to get to know my co-workers. I pride myself on getting to know their strengths, their blind spots, how they work, and what they like doing. Understanding my team allows me to contribute how I\'ll be most effective.',
+			'Furthermore, my preference is for working on diverse teams. I truely believe that our differences empower us to learn and grow.'
     ],
   }
   const stackContent = {
     techStack: 'Stack',
     bodyText: [
       'I work in a Spring, Angular stack at the moment. I had some Java and OOP fundementals before Launchcode which helped me get comfortable using Spring Boot for backend development in the class.',
-      'My only experience with frontend development was a couple web-design classes in college that made heavy use of Dreamweaver. In Launchcode, we learned server rendered templating with Thymeleaf then transitioned to SPAs with Angular.',
+      'My experience with frontend development was a couple web-design classes in college that made heavy use of Dreamweaver. In Launchcode, we learned server rendered templating with Thymeleaf then transitioned to SPAs with Angular.',
     ],
   }
   const learningContent = {
     header: 'Learning',
-    currentFocus:
+    currentFocus: [
       "I'm learning React at the moment, as well as AWS, CI/CD workflows, containerization, and expanding my grasp on design patterns.",
+			'My immidiate goal is to start working in full-stack development. Ultimately, I think I\'d rather work on backend projects, but I don\'t have the perspective to say that with confidence now.' 
+		]
   }
   const devIconLinks = {
     java: {
@@ -52,14 +56,14 @@ export default function About(props: IAboutProps) {
   return (
     <>
       <article className="[&>section]:mb-4 [&>section]:shadow-sm ">
-        <div className="mb-4 grid grid-cols-wrapper items-center  lg:grid-cols-splitwrapper">
-          <h1 className="col-start-2 text-5xl lg:col-start-2">
-            {introContent.title}
+        <div className="mb-4 grid grid-cols-wrapper items-center md:justify-items-center  md:grid-cols-splitwrapper">
+          <h1 className="mx-auto col-start-2 text-5xl md:col-start-2 md:text-right">
+            {introContent.title[0]}<br />{introContent.title[1]}
           </h1>
           <img
             src={ProfilePicture}
             alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
-            className="col-start-2 mx-auto max-w-sm rounded-full border-8 border-white shadow-lg lg:col-start-3"
+            className="col-start-2 mx-auto max-w-sm rounded-full border-8 border-white shadow-lg md:col-start-3"
           />
         </div>
         <section className="relative grid grid-cols-wrapper">
@@ -100,7 +104,13 @@ export default function About(props: IAboutProps) {
         <h2 className="wrapper mb-4 mt-8 text-4xl">{learningContent.header}</h2>
         <section className="relative grid grid-cols-wrapper">
           <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 bg-pink-500 py-4 text-white">
-            <p>{learningContent.currentFocus}</p>
+            {learningContent.currentFocus.map((content, i) => {
+              return (
+                <p key={'currentFocus' + i}>
+                  {content}
+                </p>
+              )
+						})}
           </div>
         </section>
         <p className="col-start-2">
