@@ -5,12 +5,12 @@ export interface IAboutProps {}
 
 export default function About(props: IAboutProps) {
   const introContent = {
-    title: ["Hello, ", "I'm Nathan",],
+    title: ['Hello, ', "I'm Nathan"],
     bodyText: [
       "I'm a recent graduate from Lauchcode (a non-profit bootcamp here in St Louis). With that, I have a foundation in full-stack development, but I know I still have a lot to learn.",
-      'My background is in video production. I freelanced as a video editor and am used to managing projects. It was fun work, but at this point I\'m looking for a career with more stability.',
-			'Why you should hire me, beyond the standard fast learner, passionate about tech, that you\'ll hear from everyone is that I work well on a team. I work hard to get to know my co-workers. I pride myself on getting to know their strengths, their blind spots, how they work, and what they like doing. Understanding my team allows me to contribute how I\'ll be most effective.',
-			'Furthermore, my preference is for working on diverse teams. I truely believe that our differences empower us to learn and grow.'
+      "My background is in video production. I freelanced as a video editor and am used to managing projects. It was fun work, but at this point I'm looking for a career with more stability.",
+      "Why you should hire me, beyond the standard fast learner, passionate about tech, that you'll hear from everyone is that I work well on a team. I work hard to get to know my co-workers. I pride myself on getting to know their strengths, their blind spots, how they work, and what they like doing. Understanding my team allows me to contribute how I'll be most effective.",
+      'Furthermore, my preference is for working on diverse teams. I truely believe that our differences empower us to learn and grow.',
     ],
   }
   const stackContent = {
@@ -24,8 +24,8 @@ export default function About(props: IAboutProps) {
     header: 'Learning',
     currentFocus: [
       "I'm learning React at the moment, as well as AWS, CI/CD workflows, containerization, and expanding my grasp on design patterns.",
-			'My immidiate goal is to start working in full-stack development. Ultimately, I think I\'d rather work on backend projects, but I don\'t have the perspective to say that with confidence now.' 
-		]
+      "My immidiate goal is to start working in full-stack development. Ultimately, I think I'd rather work on backend projects, but I don't have the perspective to say that with confidence now.",
+    ],
   }
   const devIconLinks = {
     java: {
@@ -56,18 +56,20 @@ export default function About(props: IAboutProps) {
   return (
     <>
       <article className="[&>section]:mb-4 [&>section]:shadow-sm ">
-        <div className="mb-4 grid grid-cols-wrapper items-center md:justify-items-center  md:grid-cols-splitwrapper">
-          <h1 className="mx-auto col-start-2 text-5xl md:col-start-2 md:text-right">
-            {introContent.title[0]}<br />{introContent.title[1]}
+        <div className="grid grid-cols-wrapper md:grid-cols-splitwrapper md:items-center md:justify-items-center  [&>*]:my-4">
+          <h1 className="col-start-2 text-5xl md:mx-auto">
+            {introContent.title[0]}
+            <br />
+            {introContent.title[1]}
           </h1>
           <img
             src={ProfilePicture}
             alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
-            className="col-start-2 mx-auto max-w-sm rounded-full border-8 border-white shadow-lg md:col-start-3"
+            className="col-start-2 md:mx-auto rounded-full border-8 border-white shadow-lg md:col-start-3 md:max-w-xs"
           />
         </div>
         <section className="relative grid grid-cols-wrapper">
-          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 grid bg-cyan-100 py-4">
+          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 grid bg-cyan-100 py-4 [&>*]:my-4 ">
             <p className="">{introContent.bodyText[0]}</p>
             <img src={LCLogo} alt="Logo for launchcode" className="max-w-lg" />
             <p className="">{introContent.bodyText[1]}</p>
@@ -76,7 +78,7 @@ export default function About(props: IAboutProps) {
         <h2 className="wrapper mb-4 mt-8 text-4xl">{stackContent.techStack}</h2>
         <section className="relative grid grid-cols-wrapper">
           <div
-            className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 gap-2 bg-amber-300 py-4 lg:flex lg:flex-wrap"
+            className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 gap-2 bg-amber-300 py-4 lg:flex lg:flex-wrap [&>*]:my-4"
             id="tech-stack-card"
           >
             <div className="float-right flex min-w-[4rem] flex-col gap-2 lg:min-w-full lg:flex-row">
@@ -105,22 +107,18 @@ export default function About(props: IAboutProps) {
         <section className="relative grid grid-cols-wrapper">
           <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 bg-pink-500 py-4 text-white">
             {learningContent.currentFocus.map((content, i) => {
-              return (
-                <p key={'currentFocus' + i}>
-                  {content}
-                </p>
-              )
-						})}
+              return <p key={'currentFocus' + i}>{content}</p>
+            })}
           </div>
         </section>
-        <p className="col-start-2">
+        {/* <p className="col-start-2">
           For part of Launchcode's capstone project, my team and I developed a
           persistent, monolithic, RESTful api utilizing an MVC pattern, built with
           Spring Boot. It was a useful project to combine the techniques and skills I
           learned in the class while finding and filling the gaps in my knowledge. To
           be particular, the backend concepts I got to delve deeper into were
           authentication, authorization, and API design.
-        </p>
+        </p> */}
         {/* <div className="flex flex-row justify-around w-full">
           <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
       </article>
