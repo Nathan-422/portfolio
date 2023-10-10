@@ -8,7 +8,7 @@ export default function About(props: IAboutProps) {
     title: ['Hello, ', "I'm Nathan"],
     bodyText: [
       "I'm a recent graduate from Lauchcode (a non-profit bootcamp here in St Louis). With that, I have a foundation in full-stack development, but I know I still have a lot to learn.",
-      "My background is in video production. I freelanced as a video editor and am used to managing projects. It was fun work, but at this point I'm looking for a career with more stability.",
+      "My background is in video production. I made educational content for a museum in Boston for a couple years before moving back to St Louis, freelancing as a video editor. It was fun work and I learned to manage projects well, but I'm looking for a career with more stability at this point.",
       "Why you should hire me, beyond the standard fast learner, passionate about tech, that you'll hear from everyone is that I work well on a team. I work hard to get to know my co-workers. I pride myself on getting to know their strengths, their blind spots, how they work, and what they like doing. Understanding my team allows me to contribute how I'll be most effective.",
       'Furthermore, my preference is for working on diverse teams. I truely believe that our differences empower us to learn and grow.',
     ],
@@ -16,7 +16,7 @@ export default function About(props: IAboutProps) {
   const stackContent = {
     techStack: 'Stack',
     bodyText: [
-      'I work in a Spring, Angular stack at the moment. I had some Java and OOP fundementals before Launchcode which helped me get comfortable using Spring Boot for backend development in the class.',
+      'I work in a Spring, Angular stack at the moment. I had Java and OOP fundementals in college. I stayed up on those concepts and that helped me get comfortable using Spring for backend development in Launchcode. ',
       'My experience with frontend development was a couple web-design classes in college that made heavy use of Dreamweaver. In Launchcode, we learned server rendered templating with Thymeleaf then transitioned to SPAs with Angular.',
     ],
   }
@@ -57,7 +57,7 @@ export default function About(props: IAboutProps) {
     <>
       <article className="[&>section]:mb-4 [&>section]:shadow-sm ">
         <div className="grid grid-cols-wrapper md:grid-cols-splitwrapper md:items-center md:justify-items-center  [&>*]:my-4">
-          <h1 className="col-start-2 text-5xl md:mx-auto">
+          <h1 className="col-start-2 text-5xl md:mx-auto md:text-6xl">
             {introContent.title[0]}
             <br />
             {introContent.title[1]}
@@ -65,7 +65,7 @@ export default function About(props: IAboutProps) {
           <img
             src={ProfilePicture}
             alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
-            className="col-start-2 md:mx-auto rounded-full border-8 border-white shadow-lg md:col-start-3 md:max-w-xs"
+            className="col-start-2 mx-auto w-full max-w-[400px] rounded-full border-8 border-white shadow-lg md:col-start-3"
           />
         </div>
         <section className="relative grid grid-cols-wrapper">
@@ -78,34 +78,34 @@ export default function About(props: IAboutProps) {
         <h2 className="wrapper mb-4 mt-8 text-4xl">{stackContent.techStack}</h2>
         <section className="relative grid grid-cols-wrapper">
           <div
-            className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 gap-2 bg-amber-300 py-4 lg:flex lg:flex-wrap [&>*]:my-4"
+            className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 flex flex-wrap gap-4 bg-amber-300 py-4"
             id="tech-stack-card"
           >
-            <div className="float-right flex min-w-[4rem] flex-col gap-2 lg:min-w-full lg:flex-row">
-              {Object.entries(devIconLinks).map(([key, value]) => {
-                return (
-                  <figure
-                    className="h-full w-full rounded-lg border-8 border-white bg-white lg:rounded-2xl"
-                    id={key + '-logo'}
-                    key={key}
-                  >
-                    <img src={value.link} alt={value.altText} />
-                  </figure>
-                )
-              })}
-            </div>
             {stackContent.bodyText.map((content, i) => {
               return (
-                <p key={'devStack-' + i} className="max-w-[90%] lg:max-w-none">
+                <p key={'devStack-' + i} className="">
                   {content}
                 </p>
               )
             })}
+            <div className="flex min-w-full flex-wrap gap-4 md:flex-nowrap">
+              {Object.entries(devIconLinks).map(([key, value]) => {
+                return (
+                  <figure
+                    className="flex aspect-square w-full max-w-[30%] justify-center rounded-full bg-white align-middle "
+                    id={key + '-logo'}
+                    key={key}
+                  >
+                    <img src={value.link} alt={value.altText} className="w-3/5 " />
+                  </figure>
+                )
+              })}
+            </div>
           </div>
         </section>
         <h2 className="wrapper mb-4 mt-8 text-4xl">{learningContent.header}</h2>
         <section className="relative grid grid-cols-wrapper">
-          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 bg-pink-500 py-4 text-white">
+          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 bg-pink-500 py-4 text-white [&>*]:my-4">
             {learningContent.currentFocus.map((content, i) => {
               return <p key={'currentFocus' + i}>{content}</p>
             })}
