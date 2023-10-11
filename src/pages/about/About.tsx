@@ -3,7 +3,6 @@ import LCLogo from '../../assets/launchcode_logo.svg'
 
 export interface IAboutProps {}
 
-
 export default function About(props: IAboutProps) {
   const introContent = {
     title: ['Hello, ', "I'm Nathan"],
@@ -71,13 +70,23 @@ export default function About(props: IAboutProps) {
         </div>
         <section className="relative grid grid-cols-wrapper">
           <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 grid bg-cyan-100 py-4 [&>*]:my-4 ">
-            <p className="">{introContent.bodyText[0]}</p>
             <img
               src={LCLogo}
               alt="Logo for launchcode"
-              className="max-w-lg md:mx-auto"
+              className="row-start-2 max-w-lg md:mx-auto"
             />
-            <p className="">{introContent.bodyText[1]}</p>
+            {introContent.bodyText.map((content, i) => {
+              return (
+                <p
+                  key={'introContent-' + i}
+                  className={
+                    i + 1 >= 2 ? 'row-start-' + (i + 2) : 'row-start-' + (i + 1)
+                  }
+                >
+                  {content}
+                </p>
+              )
+            })}
           </div>
         </section>
         <h2 className="">{stackContent.techStack}</h2>
