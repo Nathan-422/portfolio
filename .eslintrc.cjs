@@ -7,11 +7,18 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
+	settings: {
+		react: {
+			fragments: "syntax",
+			version: "detect",
+		},
+	},
   plugins: [
     'react', 
     'react-hooks', 
