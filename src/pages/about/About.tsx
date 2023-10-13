@@ -3,6 +3,7 @@ import LCLogo from '../../assets/launchcode_logo.svg'
 
 export interface IAboutProps {}
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function About(props: IAboutProps) {
   const introContent = {
     title: ['Hello, ', "I'm Nathan"],
