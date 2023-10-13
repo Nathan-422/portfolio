@@ -6,7 +6,7 @@ export default function App() {
   return (
     <Router>
       <Navbar></Navbar>
-      <div className="container m-auto px-1 pt-6 ">
+      <div className="m-auto pt-6 font-sans">
         <Routes>
           <Route path="/" element={<LittleHome />}></Route>
           <Route path="/about" element={<About />}></Route>

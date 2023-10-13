@@ -1,67 +1,127 @@
+import ProfilePicture from '../../assets/nathan-and-ru.jpg'
+import LCLogo from '../../assets/launchcode_logo.svg'
+
 export interface IAboutProps {}
 
 export default function About(props: IAboutProps) {
+  const introContent = {
+    title: ['Hello, ', "I'm Nathan"],
+    bodyText: [
+      "I'm a recent graduate from Lauchcode (a non-profit bootcamp here in St Louis). With that, I have a foundation in full-stack development, but I know I still have a lot to learn.",
+      "My background is in video production. I freelanced as a video editor and am used to managing projects. It was fun work, but at this point I'm looking for a career with more stability.",
+      "Why you should hire me, beyond the standard fast learner, passionate about tech, that you'll hear from everyone is that I work well on a team. I work hard to get to know my co-workers. I pride myself on getting to know their strengths, their blind spots, how they work, and what they like doing. Understanding my team allows me to contribute how I'll be most effective.",
+      'Furthermore, my preference is for working on diverse teams. I truely believe that our differences empower us to learn and grow.',
+    ],
+  }
+  const stackContent = {
+    techStack: 'Stack',
+    bodyText: [
+      'I work in a Spring, Angular stack at the moment. I had some Java and OOP fundementals before Launchcode which helped me get comfortable using Spring Boot for backend development in the class.',
+      'My experience with frontend development was a couple web-design classes in college that made heavy use of Dreamweaver. In Launchcode, we learned server rendered templating with Thymeleaf then transitioned to SPAs with Angular.',
+    ],
+  }
+  const learningContent = {
+    header: 'Learning',
+    currentFocus: [
+      "I'm learning React at the moment, as well as AWS, CI/CD workflows, containerization, and expanding my grasp on design patterns.",
+      "My immidiate goal is to start working in full-stack development. Ultimately, I think I'd rather work on backend projects, but I don't have the perspective to say that with confidence now.",
+    ],
+  }
+  const devIconLinks = {
+    java: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+      altText: 'Java language logo',
+    },
+    spring: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
+      altText: 'Spring framework logo',
+    },
+    mySQL: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      altText: 'MySQL logo',
+    },
+    angular: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg',
+      altText: 'Angular framework logo',
+    },
+    react: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      altText: 'React library logo',
+    },
+    tailwind: {
+      link: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+      altText: 'TailwindCSS logo',
+    },
+  }
   return (
     <>
-      <section className="flex flex-col space-y-6 mx-auto p-2">
-        <h1 className="text-4xl">Professionally</h1>
-        <p>Hello, I'm Nathan. </p>
-        <p>
-          A quick preface: I won't waste your time with embellishments. I'm an
-          aspiring full-stack developer. I went through a bootcamp, so I have a
-          baseline for developing web application, but obviously I still have to
-          learn about development. What I am is an avid learner, constantly absorbing
-          new patterns and technologies. There is an experience gap to close before
-          I'm up to full speed, but I'm working on that every day.
-        </p>
-        <h2 className="text-3xl">Focus</h2>
-        <p>I'm a full-stack web developer based in St. Louis, MO.</p>
-        <p>
-          My tech career started in 2022 with Launchcode's web-development bootcamp.
-          The program taught a mix of development skills: single page applications,
-          RESTful APIs, Relational databases, unit testing, core language skills, and
-          most importantly collaborative development in an agile environment.
-        </p>
-        <p>
-          My current focus is learning React development, but my next priorities are
-          cloud deployment in AWS, CI/CD pipelines, and database skill refinement.
-        </p>
-        <h3 className="text-xl">Backend</h3>
-        <p>
-          Java was the language where I started. I first learned a bit in college,
-          then later fleshed out my fundamentals in University of Helsinki's open
-          online Java program. In 2022, I went through Launchcode's web development
-          course where I started using Java and Spring Boot to build RESTful APIs.
-        </p>
-        <p>
+      <article className="[&>section]:mb-4 [&>section]:shadow-sm ">
+        <div className="grid grid-cols-wrapper md:grid-cols-splitwrapper md:items-center md:justify-items-center  [&>*]:my-4">
+          <h1 className="col-start-2 text-5xl md:mx-auto">
+            {introContent.title[0]}
+            <br />
+            {introContent.title[1]}
+          </h1>
+          <img
+            src={ProfilePicture}
+            alt="A picture of Nathan. He is bent over the camera with long curly hair around his face. A cat rests on his back looking at something out of frame."
+            className="col-start-2 md:mx-auto rounded-full border-8 border-white shadow-lg md:col-start-3 md:max-w-xs"
+          />
+        </div>
+        <section className="relative grid grid-cols-wrapper">
+          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 grid bg-cyan-100 py-4 [&>*]:my-4 ">
+            <p className="">{introContent.bodyText[0]}</p>
+            <img src={LCLogo} alt="Logo for launchcode" className="max-w-lg" />
+            <p className="">{introContent.bodyText[1]}</p>
+          </div>
+        </section>
+        <h2 className="wrapper mb-4 mt-8 text-4xl">{stackContent.techStack}</h2>
+        <section className="relative grid grid-cols-wrapper">
+          <div
+            className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 gap-2 bg-amber-300 py-4 lg:flex lg:flex-wrap [&>*]:my-4"
+            id="tech-stack-card"
+          >
+            <div className="float-right flex min-w-[4rem] flex-col gap-2 lg:min-w-full lg:flex-row">
+              {Object.entries(devIconLinks).map(([key, value]) => {
+                return (
+                  <figure
+                    className="h-full w-full rounded-lg border-8 border-white bg-white lg:rounded-2xl"
+                    id={key + '-logo'}
+                    key={key}
+                  >
+                    <img src={value.link} alt={value.altText} />
+                  </figure>
+                )
+              })}
+            </div>
+            {stackContent.bodyText.map((content, i) => {
+              return (
+                <p key={'devStack-' + i} className="max-w-[90%] lg:max-w-none">
+                  {content}
+                </p>
+              )
+            })}
+          </div>
+        </section>
+        <h2 className="wrapper mb-4 mt-8 text-4xl">{learningContent.header}</h2>
+        <section className="relative grid grid-cols-wrapper">
+          <div className="before:grid-left-bg-fill after:grid-right-bg-fill col-start-2 bg-pink-500 py-4 text-white">
+            {learningContent.currentFocus.map((content, i) => {
+              return <p key={'currentFocus' + i}>{content}</p>
+            })}
+          </div>
+        </section>
+        {/* <p className="col-start-2">
           For part of Launchcode's capstone project, my team and I developed a
           persistent, monolithic, RESTful api utilizing an MVC pattern, built with
           Spring Boot. It was a useful project to combine the techniques and skills I
           learned in the class while finding and filling the gaps in my knowledge. To
           be particular, the backend concepts I got to delve deeper into were
           authentication, authorization, and API design.
-        </p>
-        <h3 className="text-xl">Frontend</h3>
-
-        <h2 className="text-2xl">Background</h2>
-        <h3 className="text-xl">Education</h3>
-        <p>Lauchcode</p>
-        <p>Principia College</p>
-        <h3 className="text-xl">Notable projects</h3>
-        <h4 className="text-l">Aspen Global Change Institute: Archive Editing</h4>
-        <p></p>
-        <h4 className="text-l">Taste Buddies</h4>
-
+        </p> */}
         {/* <div className="flex flex-row justify-around w-full">
-        <figure className="min-w-[6rem]">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
-        </figure>
-        <figure className="min-w-[6rem]">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Logo of the Spring framework"/>
-        </figure>
-      </div>
-      <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
-      </section>
+          <p>My backend projects have been built out with Java using the Spring Boot framework. I first learned a bit of Java in college, then started using it in earnest for building web apps in Launchcode.</p> */}
+      </article>
     </>
   )
 }
