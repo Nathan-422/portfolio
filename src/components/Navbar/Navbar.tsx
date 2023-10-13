@@ -10,7 +10,11 @@ export function Navbar() {
   ]
 
   const links = routes.map((route) => (
-    <Link className='lg:invisible visible ' key={crypto.randomUUID()} to={route.route}>
+    <Link
+      className="lg:invisible visible "
+      key={crypto.randomUUID()}
+      to={route.route}
+    >
       {route.text}
     </Link>
   ))
