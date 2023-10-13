@@ -1,4 +1,4 @@
-import { Navbar } from './components/nav-bar/Navbar.tsx'
+import { Navbar } from './components/Navbar/Navbar.tsx'
 import { Card } from './components/card/Card.tsx'
 import About from './pages/about/About.tsx'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
