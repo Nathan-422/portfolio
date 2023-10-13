@@ -3,6 +3,7 @@ import { Button } from '../button/Button'
 
 export interface IGuessingGameProps {}
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function GuessingGame(props: IGuessingGameProps) {
   const [clicked, setClicked] = useState(false)
   const [gameEnded, setGameActive] = useState(true)
