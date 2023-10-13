@@ -11,7 +11,7 @@ export function Navbar() {
 
   const links = routes.map((route) => (
     <Link
-      className="lg:invisible visible "
+      className="visible lg:invisible "
       key={crypto.randomUUID()}
       to={route.route}
     >
