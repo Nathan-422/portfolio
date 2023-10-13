@@ -21,7 +21,7 @@ function LittleHome() {
   return (
     <>
       <h1 className="text-6xl">Home</h1>
-      <p>Welcome to Nathan$apos;s router</p>
+      <p>Welcome to Nathan&apos;s router</p>
     </>
   )
 }
@@ -30,7 +30,7 @@ function NoMatch() {
   return (
     <>
       <h1 className="text-6xl text-red-700">404</h1>
-      <p>Sorry, the hampsters couldn$apos;t find that page</p>
+      <p>Sorry, the hampsters couldn&apos;t find that page</p>
     </>
   )
 }
