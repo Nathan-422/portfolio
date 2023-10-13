@@ -10,7 +10,11 @@ export function Navbar() {
   ]
 
   const links = routes.map((route) => (
-    <Link key={crypto.randomUUID()} to={route.route}>
+    <Link
+      className="lg:invisible visible "
+      key={crypto.randomUUID()}
+      to={route.route}
+    >
       {route.text}
     </Link>
   ))
@@ -18,7 +22,7 @@ export function Navbar() {
   return (
     <div className="bg-green-700">
       <div className="mx-auto max-w-5xl">
-        <nav className=" flex flex-row content-center justify-end space-x-4 px-6 py-3 text-white">
+        <nav className="flex flex-row content-center justify-end space-x-4 px-6 py-3 text-white">
           {links}
         </nav>
       </div>
